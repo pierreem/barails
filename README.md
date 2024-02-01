@@ -2,7 +2,8 @@
 
 This is an example app to support an astonishing rails lesson
 
-#install
+#install ruby 3 & rails 7
+https://gorails.com/setup
 
 #create base app
 
