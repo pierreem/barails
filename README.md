@@ -11,7 +11,7 @@ This is an example app to support an astonishing rails lesson
 rails new barails
 cd barails
 rails server (or rails s)
-~~
+~~~
 check the result on your browser http://localhost:3000/
 ctrl - c to close the server
 
@@ -28,5 +28,14 @@ git push -u origin main
 ~~~
 
 ## Deploy with render
+
+Go to render.com, create a free account.
+Create a web app, connect your github repository
+
 ~~~
 bundle lock --add-platform x86_64-linux
+rails credentials:edit
+git add .
+git commit -m "Adding linux platform for render"
+git push
+~~~
