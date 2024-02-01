@@ -2,10 +2,10 @@
 
 This is an example app to support an astonishing rails lesson
 
-#install ruby 3 & rails 7
+# install ruby 3 & rails 7
 https://gorails.com/setup
 
-#create base app
+# create base app
 
 ## create rails app locally
 ~~~
