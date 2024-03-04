@@ -1,0 +1,5 @@
+fr:
+  beer:
+    errors:
+      description:
+        does_not_include_type: "La description doit au moins contenir la robe de la bière"
