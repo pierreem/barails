@@ -1,5 +1,13 @@
 en:
+  actions:
+    are_you_sure: Are you sure?
+    show: Show
+    edit: Edit
+    destroy: Destroy
+    back: Back
+    save: Save
   beer:
+    new: New beer
     errors:
       description:
-        does_not_include_type: "Description does not include beer type !"
+        does_not_include_type: "does not include beer type !"

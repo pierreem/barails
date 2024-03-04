@@ -25,5 +25,5 @@
   -@beer.notes.each do |note|
     ="#{note.value}/#{Note::MAX_VAL} ajouté par #{note.beer_geek}"
 
-= link_to 'Edit', edit_beer_path(@beer)
-= link_to 'Back', beers_path
+= link_to I18n.t('actions.edit'), edit_beer_path(@beer)
+= link_to I18n.t('actions.back'), beers_path

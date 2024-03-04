@@ -18,10 +18,10 @@
         %td= beer.description
         %td= beer.brand
         %td= beer.cl
-        %td= link_to 'Show', beer
-        %td= link_to 'Edit', edit_beer_path(beer)
-        %td= link_to 'Destroy', beer, method: :delete, data: { confirm: 'Are you sure?' }
+        %td= link_to I18n.t('actions.show'), beer
+        %td= link_to I18n.t('actions.edit'), edit_beer_path(beer)
+        %td= link_to I18n.t('actions.destroy'), beer, method: :delete, data: { confirm: I18n.t('beer.are_you_sure') }
 
 %br
 
-= link_to 'New Beer', new_beer_path
+= link_to I18n.t('beer.new'), new_beer_path

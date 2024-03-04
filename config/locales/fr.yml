@@ -1,5 +1,13 @@
 fr:
+  actions:
+    are_you_sure: Êtes-vous sûr ?
+    show: Voir
+    edit: Modifier
+    destroy: Supprimer
+    back: Retour
+    save: Enregistrer
   beer:
+    new: Crée une bière !
     errors:
       description:
-        does_not_include_type: "La description doit au moins contenir la robe de la bière"
+        does_not_include_type: "doit au moins contenir la robe de la bière"
