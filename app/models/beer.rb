@@ -19,7 +19,7 @@ class Beer < ApplicationRecord
   #validates_presence_of :name
   validates :name, presence: true,  uniqueness: { case_sensitive: false }
   validate :description_include_type
-
+  validates_associated :notes
 
   def description_include_type
     unless description.match?(/[B|b]lanche|[B|b]londe|[A|a]mbrée|IPA/)

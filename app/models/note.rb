@@ -11,7 +11,9 @@
 #
 class Note < ApplicationRecord
   MAX_VAL = 10
-  validates_presence_of :value
+  MIN_VAL = 0
+  validates :value, presence: true, numericality: { only_integer: true , less_than_or_equal_to: MAX_VAL, greater_than_or_equal_to: MIN_VAL}
+  validates_presence_of :beer_geek
   belongs_to :beer
   belongs_to :beer_geek
 end
