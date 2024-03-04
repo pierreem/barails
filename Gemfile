@@ -70,3 +70,11 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
+
+
+gem 'haml'
+gem 'haml-rails'
+gem 'html2haml'
+gem 'devise'
+
+gem 'annotate'

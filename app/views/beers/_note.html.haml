@@ -1,0 +1,7 @@
+= fn.label fn.object.beer_geek.nil? ? "Nouvelle note" : fn.object.beer_geek.to_s
+= fn.hidden_field :beer_geek_id, value: (fn.object.beer_geek || current_beer_geek).id
+= fn.hidden_field :id
+= fn.number_field :value
+-unless fn.object.beer_geek.nil?
+  = fn.label "Supprimer:"
+  = fn.check_box :_destroy

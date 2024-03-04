@@ -1,0 +1,29 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @beer.name
+%p
+  %b Description:
+  = @beer.description
+%p
+  %b Note moyenne:
+  = @beer.notes.pluck(:value).sum / @beer.notes.size unless @beer.notes.empty?
+%p
+  %b Brand:
+  = @beer.brand
+%p
+  %b Cl:
+  = @beer.cl
+
+%p
+  %b Utilisateurs ayant goûté cette bière:
+  =@beer.beer_geeks.join(', ')
+
+%p
+  %b= "#{@beer.notes.size} notes:"
+  -@beer.notes.each do |note|
+    ="#{note.value}/#{Note::MAX_VAL} ajouté par #{note.beer_geek}"
+
+= link_to 'Edit', edit_beer_path(@beer)
+= link_to 'Back', beers_path

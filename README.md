@@ -2,12 +2,12 @@
 
 This is an example app to support an astonishing rails lesson
 
-# install ruby 3 & rails 7
+# Install ruby 3 & rails 7
 https://gorails.com/setup
 
-# create base app
+# Create base app
 
-## create rails app locally
+## Create rails app locally
 ~~~
 rails new prenom-nom
 cd prenom-nom
