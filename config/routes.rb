@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
   devise_for :beer_geeks
   resources :beers
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  get '/notes/:beer_geek_name', to: 'notes#for', as: 'notes_for' 
 
-  # Defines the root path route ("/")
   root "beers#index"
 end

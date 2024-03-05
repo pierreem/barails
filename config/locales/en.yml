@@ -1,4 +1,5 @@
 en:
+  no_beer_geek_name: "There is no beer geek's named %{name}"
   actions:
     are_you_sure: Are you sure?
     show: Show
