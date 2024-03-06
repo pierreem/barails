@@ -26,4 +26,8 @@ class BeerGeek < ApplicationRecord
   def to_s
     email.gsub(/\@[a-z0-9\.]*/,"")
   end
+
+  def beer_not_noted
+    Beer.where.not(id: beers.pluck(:id))
+  end
 end

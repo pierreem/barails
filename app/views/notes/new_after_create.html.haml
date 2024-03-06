@@ -1,0 +1,5 @@
+=turbo_frame_tag Note.new do
+  =render "new"
+  %script{type: "module"}
+    import { addNoteToNotesList } from "note_for";
+    addNoteToNotesList("#{note_path(@beer_geek.name,@note)}", 'note_#{@note.id}');

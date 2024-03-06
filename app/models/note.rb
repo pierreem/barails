@@ -14,6 +14,7 @@ class Note < ApplicationRecord
   MIN_VAL = 0
   validates :value, presence: true, numericality: { only_integer: true , less_than_or_equal_to: MAX_VAL, greater_than_or_equal_to: MIN_VAL}
   validates_presence_of :beer_geek
+  validates_uniqueness_of :beer_id, scope: :beer_geek_id
   belongs_to :beer
   belongs_to :beer_geek
 end

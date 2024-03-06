@@ -1,0 +1,4 @@
+-if current_beer_geek
+  =link_to t("logout", name: current_beer_geek.name), destroy_beer_geek_session_path, data: { "turbo-method": :delete }
+-else
+  =link_to t('devise.shared.links.sign_in'), new_beer_geek_session_path

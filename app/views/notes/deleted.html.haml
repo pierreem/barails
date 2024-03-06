@@ -1,0 +1,11 @@
+=turbo_frame_tag "note_#{@note_id}" do
+  =t("note.deleted_succesfully", beer_name: @beer)
+  %br
+  :javascript
+    setTimeout(function(){
+      //remove node after 5 seconde to be in sync with server
+      document.querySelector("#note_#{@note_id}").remove();
+    }, 5000)
+
+    //force reload off new note part
+    document.querySelector("#new_note").setAttribute('src',"#{new_note_path(@beer_geek.name)}");

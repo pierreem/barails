@@ -1,0 +1,6 @@
+=turbo_frame_tag note do
+  =note.beer.name
+  =note.value
+  -if current_beer_geek and current_beer_geek == @beer_geek
+    =button_to t("actions.destroy"), note_path(@beer_geek.name, note), method: :delete, form: {style: 'display:inline-block;'}
+  %br

@@ -1,0 +1,8 @@
+=form_for note, html: {style: "display:inline-flex;"} do |f|
+  =note.beer.name
+  =f.hidden_field :beer_id
+  =f.text_field :value,
+    placeholder: I18n.t("note.value.placeholder",
+      min_note: Note::MIN_VAL,
+      max_note: Note::MAX_VAL)
+  =f.submit t("actions.save")

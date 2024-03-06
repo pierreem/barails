@@ -1,1 +1,7 @@
 %h1= "Notes de #{@beer_geek.name}"
+#notes
+  -@beer_geek.notes.each do |note|
+    =render "show", note: note
+-if current_beer_geek and current_beer_geek == @beer_geek
+  =turbo_frame_tag Note.new, src: new_note_path, loading: :lazy do
+    =render "application/wait"
