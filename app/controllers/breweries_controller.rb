@@ -25,6 +25,7 @@ class BreweriesController < ApplicationController
 
     respond_to do |format|
       if @brewery.save
+        format.turbo_stream
         format.html { render :_new_link, notice: "Brewery was successfully created." }
         format.json { render :show, status: :created, location: @brewery }
       else

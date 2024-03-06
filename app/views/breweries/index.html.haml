@@ -1,7 +1,8 @@
 %h1 Listing breweries
-- @breweries.each do |brewery|
-  =turbo_frame_tag brewery, loading: "lazy", src: brewery_path(brewery) do
-    =render "application/wait"
-    %br
+#breweries
+  - @breweries.each do |brewery|
+    =turbo_frame_tag brewery, loading: "lazy", src: brewery_path(brewery) do
+      =render "application/wait"
+      %br
 %br
 =render "new_link"
