@@ -52,6 +52,7 @@ class BreweriesController < ApplicationController
     @brewery.destroy
 
     respond_to do |format|
+      format.turbo_stream
       format.html { render :show, notice: "Brewery was successfully destroyed." }
       format.json { head :no_content }
     end
