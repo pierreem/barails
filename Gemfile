@@ -76,5 +76,5 @@ gem 'haml'
 gem 'haml-rails'
 gem 'html2haml'
 gem 'devise'
-
+gem 'devise-i18n'
 gem 'annotate'

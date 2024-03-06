@@ -97,6 +97,8 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
+    devise-i18n (1.12.0)
+      devise (>= 4.9.0)
     erubi (1.12.0)
     erubis (2.7.0)
     globalid (1.2.1)
@@ -265,6 +267,7 @@ DEPENDENCIES
   capybara
   debug
   devise
+  devise-i18n
   haml
   haml-rails
   html2haml
