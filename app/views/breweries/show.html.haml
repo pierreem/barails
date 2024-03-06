@@ -1,0 +1,5 @@
+=turbo_frame_tag @brewery do
+  = @brewery.name
+  = link_to 'Edit', edit_brewery_path(@brewery)
+  = link_to 'Destroy', @brewery, method: :delete, data: { confirm: 'Are you sure?' , "turbo-method": :delete}
+  %br

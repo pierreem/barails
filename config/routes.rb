@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :breweries
   devise_for :beer_geeks
   resources :beers
   scope "/notes_for/:beer_geek_name" do

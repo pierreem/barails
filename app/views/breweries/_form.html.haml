@@ -1,0 +1,14 @@
+=turbo_frame_tag brewery do
+  = form_for @brewery,  html: {style: "display:inline-flex;"} do |f|
+    - if @brewery.errors.any?
+      #error_explanation
+        %h2= "#{pluralize(@brewery.errors.count, "error")} prohibited this brewery from being saved:"
+        %ul
+          - @brewery.errors.full_messages.each do |message|
+            %li= message
+    .field
+      = f.label :name
+      = f.text_field :name
+    .actions
+      = f.submit 'Save'
+  %br
