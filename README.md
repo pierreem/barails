@@ -42,16 +42,15 @@ git push
 
 ### Adding postgresql in production:
 
+* creating an exemple scaffold to test your app & db:
+~~~
+rails g scaffold Truc name:string
+~~~
+
 * On render dashboard click "new" choose "postgresql" then add all info and wait for the db creation
 * Adding "gem 'pg'" inside a production block in Gemfile
 * Put "gem 'sqlite3'" inside a development block in Gemfile
-* Adding "DATABASE_PASSWORD" inside credentials with password from the created db on render.com
-~~~
-rails credentials:edit
-DATABASE_PASSWORD: get_it_from_render.com
-~~~
 
-* Adding DATABASE_PASSWORD inside environment tabs on render.com for the webservice instance
 * Adding parameter for production db inside config/database.yml
 ~~~
 production:
@@ -61,16 +60,19 @@ production:
   username: your_unique_app_name
   password: <%= ENV['DATABASE_PASSWORD'] %>
 ~~~
+
 * On render.com, on webservice setting, add migration & asset precompilation to the build command:
 ~~~
-bundle install ; rails db:migrate; rails assets:precompile
+bundle install ; rails db:migrate; rails assets:precompile ; rails assets:clean
 ~~~
 
-* Get your internal db url from your render dashboard and put it in Environment Variables in your web service instance with key "DATABASE_URL"
+* Go to your render.com dashboard, tabs "environment"
+ * Add DATABASE_URL with url from your render.com postgresql instance
+ * Add DATABASE_PASSWORD with password from your render.com postgresql instance
 
 * commit on github and deploy your last commit on render
 
-If your address on render.com show:  "The page you were looking for doesn't exist." you're ready !!
+If your address on render.com/truc show an index of truc and you can add one, YOUR GOOD TO GO !  
 
 ### testing your production in local [OPTIONAL]:
 

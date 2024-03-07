@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :trucs
   devise_for :beer_geeks
 
   resources :beers

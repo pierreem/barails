@@ -1,0 +1,13 @@
+= form_for @truc do |f|
+  - if @truc.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@truc.errors.count, "error")} prohibited this truc from being saved:"
+      %ul
+        - @truc.errors.full_messages.each do |message|
+          %li= message
+
+  .field
+    = f.label :name
+    = f.text_field :name
+  .actions
+    = f.submit 'Save'

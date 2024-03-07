@@ -1,0 +1,21 @@
+%h1 Listing trucs
+
+%table
+  %thead
+    %tr
+      %th Name
+      %th
+      %th
+      %th
+
+  %tbody
+    - @trucs.each do |truc|
+      %tr
+        %td= truc.name
+        %td= link_to 'Show', truc
+        %td= link_to 'Edit', edit_truc_path(truc)
+        %td= link_to 'Destroy', truc, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Truc', new_truc_path

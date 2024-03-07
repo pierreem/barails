@@ -1,0 +1,9 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @truc.name
+
+= link_to 'Edit', edit_truc_path(@truc)
+\|
+= link_to 'Back', trucs_path
