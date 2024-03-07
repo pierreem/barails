@@ -41,7 +41,6 @@ git push
 ~~~
 
 #Adding postgresql in production:
-
 -Adding "gem 'pg'" inside a production block in Gemfile
 
 -Put "gem 'sqlite3'" inside a development block in Gemfile
@@ -63,6 +62,28 @@ production:
   username: your_unique_app_name
   password: <%= ENV['APPNAME_DATABASE_PASSWORD'] %>
 ~~~
+
+-On render dashboard click "new" then add all info and wait for the db creation
+
+-Creating a file named "render-build.sh" in bin directory with this inside:
+~~~
+#!/usr/bin/env bash
+# exit on error
+set -o errexit
+
+bundle install
+rails db:migrate
+bundle exec rails assets:precompile
+bundle exec rails assets:clean
+~~~
+make it executable:
+~~~
+chmod a+x bin/render-build.sh
+~~~
+
+-Get your internal db url from your render dashboard and put it in Environment Variables in your web service instance with key "DATABASE_URL"
+
+-commit on github and deploy your last commit on render by "manual deployment" button on dashboard
 
 If your address on render.com show:  "The page you were looking for doesn't exist." you're ready !!
 
