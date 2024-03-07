@@ -41,15 +41,17 @@ git push
 ~~~
 
 ### Adding postgresql in production:
+
+* On render dashboard click "new" choose "postgresql" then add all info and wait for the db creation
 * Adding "gem 'pg'" inside a production block in Gemfile
 * Put "gem 'sqlite3'" inside a development block in Gemfile
-* Adding "APPNAME_DATABASE_PASSWORD" inside credentials
+* Adding "DATABASE_PASSWORD" inside credentials with password from the created db on render.com
 ~~~
 rails credentials:edit
-APPNAME_DATABASE_PASSWORD: your_uuid_generated_password_go_to_ddg_and_ask_uuid
+DATABASE_PASSWORD: get_it_from_render.com
 ~~~
 
-* Adding APPNAME_DATABASE_PASSWORD inside environment tabs on render.com
+* Adding DATABASE_PASSWORD inside environment tabs on render.com for the webservice instance
 * Adding parameter for production db inside config/database.yml
 ~~~
 production:
@@ -57,30 +59,16 @@ production:
   database: your_unique_app_name_db
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   username: your_unique_app_name
-  password: <%= ENV['APPNAME_DATABASE_PASSWORD'] %>
+  password: <%= ENV['DATABASE_PASSWORD'] %>
 ~~~
-
-* On render dashboard click "new" then add all info and wait for the db creation
-
-* Creating a file named "render-build.sh" in bin directory with this inside:
+* On render.com, on webservice setting, add migration & asset precompilation to the build command:
 ~~~
-#!/usr/bin/env bash
-# exit on error
-set -o errexit
-
-bundle install
-rails db:migrate
-bundle exec rails assets:precompile
-bundle exec rails assets:clean
-~~~
-make it executable:
-~~~
-chmod a+x bin/render-build.sh
+bundle install ; rails db:migrate; rails assets:precompile
 ~~~
 
 * Get your internal db url from your render dashboard and put it in Environment Variables in your web service instance with key "DATABASE_URL"
 
-* commit on github and deploy your last commit on render by "manual deployment" button on dashboard
+* commit on github and deploy your last commit on render
 
 If your address on render.com show:  "The page you were looking for doesn't exist." you're ready !!
 
