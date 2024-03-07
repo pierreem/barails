@@ -159,6 +159,7 @@ GEM
     nokogiri (1.16.0-x86_64-linux)
       racc (~> 1.4)
     orm_adapter (0.5.0)
+    pg (1.4.6)
     psych (5.1.2)
       stringio
     public_suffix (5.0.4)
@@ -273,6 +274,7 @@ DEPENDENCIES
   html2haml
   importmap-rails
   jbuilder
+  pg
   puma (~> 5.0)
   rails (~> 7.0.4, >= 7.0.4.3)
   redis (~> 4.0)
