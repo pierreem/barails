@@ -9,6 +9,7 @@
 #  cl          :float
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
+#  brewery_id  :integer          default(1), not null
 #
 
 one:

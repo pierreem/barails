@@ -9,11 +9,12 @@
 #  cl          :float
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
+#  brewery_id  :integer          default(1), not null
 #
-# beer.rb
 class Beer < ApplicationRecord
   has_many :notes
   has_many :beer_geeks, through: :notes
+  belongs_to :brewery
   accepts_nested_attributes_for :notes, allow_destroy: true
 
   #validates_presence_of :name

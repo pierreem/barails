@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_03_06_133644) do
+ActiveRecord::Schema[7.0].define(version: 2024_03_07_094147) do
   create_table "beer_geeks", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -32,6 +32,8 @@ ActiveRecord::Schema[7.0].define(version: 2024_03_06_133644) do
     t.float "cl"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "brewery_id", default: 1, null: false
+    t.index ["brewery_id"], name: "index_beers_on_brewery_id"
   end
 
   create_table "breweries", force: :cascade do |t|
@@ -50,6 +52,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_03_06_133644) do
     t.index ["beer_id"], name: "index_notes_on_beer_id"
   end
 
+  add_foreign_key "beers", "breweries"
   add_foreign_key "notes", "beer_geeks"
   add_foreign_key "notes", "beers"
 end
