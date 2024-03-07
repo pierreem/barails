@@ -9,4 +9,8 @@
 #
 class Brewery < ApplicationRecord
   has_many :beers
+
+  def beer_channel
+    "breweries_#{id}_beers"
+  end
 end

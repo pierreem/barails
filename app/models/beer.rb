@@ -17,6 +17,8 @@ class Beer < ApplicationRecord
   belongs_to :brewery
   accepts_nested_attributes_for :notes, allow_destroy: true
 
+  after_save -> { broadcast_append_to brewery.beer_channel, partial: "breweries/beer", locals: { beer: self }, target: "beers" }
+
   #validates_presence_of :name
   validates :name, presence: true,  uniqueness: { case_sensitive: false }
   validate :description_include_type

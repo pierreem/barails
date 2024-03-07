@@ -1,3 +1,6 @@
 %h1= @brewery.name
--@brewery.beers.each do |beer|
-  =render "beer", beer: beer
+#beers
+  -@brewery.beers.each do |beer|
+    =render "beer", beer: beer
+
+=turbo_stream_from @brewery.beer_channel
